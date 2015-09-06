@@ -1,0 +1,253 @@
+@import "header";
+@import "nav";   
+@import "footer";
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+b,
+strong {
+  font-weight: bold;
+}
+h1 {
+  font-size: 2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0;
+    padding: 0;
+}
+small {
+  font-size: 80%;
+}
+
+
+img {
+  border: 0;
+}
+
+
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  margin: 0; /* 3 */
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+  border:0 none;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    z-index: 1;
+    min-width: 1200px;
+    background-color:#f4f4f4;
+    font:14px/1.5 "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+}
+
+/* 清除浮动 */
+.clearfix{
+  zoom:1;
+  &:after{
+    clear:both;
+    content:"\20";
+    display:block;
+    visibility:hidden;
+    width:0;
+    height:0;
+  }
+}
+
+/* 基本的全局样式 */
+.f_left {
+  float:left;
+}
+.f_right {
+  float:right;
+}
+
+.block {
+    display: block;
+}
+.table {
+    display: table;
+    word-spacing: -1em;
+}
+.inline {
+    display: inline-block;
+    word-spacing: 0em;
+}
+.none {
+    display: none;
+}
+
+.width(@width) {
+    width: @width;
+}
+
+.font_size(@size) {
+    font-size: @size;
+}
+
+@colorBlack: #000;
+@colorWhite: #fff;
+@colorRed: #e60012;
+@colorBg: #76c7c0;
+@colorFont:#777;
+@colorTitle:#7f8c8c;
+@colorUrl: #00c;
+@colorHover: #e8645a;
+@colorButton: #76caca;
+@colorBorder:#62bdbd;
+@colorBorderHover:#e2534b;
+@c_base: 3fcbc0;
+
+.common_center( @margin-top, @margin-bottom, @width){
+  width:@width;
+  margin:@margin-top auto @margin-bottom;
+}
+
+.imgbox( @width, @height: auto ) {
+    display:block;
+    width: @width;
+    height: @height;
+    img {
+        display:block;
+        width: @width;
+    }
+}
+
+.middle_height(@height){
+  height:@height;
+  line-height:@height;
+}
+
+.button(@width,@height,@radius,@color,@bgColor) {
+    width: @width;
+    height:@height;
+    line-height:@height;
+    text-align:center;
+    border-radius:@radius;
+    background:@bgColor;
+    border:1px solid @color;
+}
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>家家乐</title>
+    <link rel="stylesheet" href={% static "css/font.css"   %}>
+    <link rel="stylesheet" href={% static "css/index.css"  %}>
+    {% include "common/head.html" %}
+    <script data-main="static/js/index" src={% static "js/require.js" %}>
+    </script>
+</head>
+<body>
+    {% include "common/header.html" %}
+    <section class="carousel">
+        <div class="carousel_con cycle-slideshow" data-cycle-slides=">.eachtab" data-cycle-pager="#mainCarousePager" data-cycle-pager-template="<span></span>" data-cycle-swipe="true" >
+            <a class="first eachtab" href="#" >
+            </a>
+            <a class="second eachtab" href="#" style="display:none;">
+            </a>
+            <a class="third eachtab" href="#" style="display:none" >
+            </a>
+            <span class="left cycle-prev"><i class="fa fa-angle-double-left"></i></span>
+            <span class="right cycle-next"><i class="fa fa-angle-double-right"></i></span>
+        </div>
+        <div id="mainCarousePager">
+        </div>
+    </section>
+
+    <section id="search" class="search">
+        <div class="search_detail"> 
+            <form action="" method="" id="" class="clearfix">
+                <input type="text" placeholder="请输入关键字查找" name="keyword">
+                <input type="submit" value="search">
+            </form>
+            <ul>
+                <li class="first">
+                    <a href="#">
+                    热门区域：
+                    </a>
+                </li>
+                <li>
+                    <a href="#" >
+                    高新区
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    川师
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    软件园
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--
+    <div class="list_title">
+        今日精选房源
+    </div>
+    -->
+    <ol class="container clearfix">
+        <li class="first">
+            <a href="/sale">
+                我要买房
+            </a>
+        </li>
+        <li class="last">
+            <a href="/rent">
+                我要租房
+            </a>
+        </li>
+        <li class="first">
+            <a href="/wantSale">
+                我要出售
+            </a>
+        </li>
+        <li class="last">
+            <a href="/wantRent">
+                我要出租
+            </a>
+        </li>
+        <!--
+        {% for eachVal in eachInfo %}
+            <div class="each_detail_info">
+                <a href="/saleDetail?eachID={{ eachVal.id }}"  target="_blank" class="imgbox_318_212">
+                    <img src="http://www.uoko.com/Image?imgid=59207&width=318&height=212" alt="">
+                </a>
+                <h4>
+                    <a href="/saleDetail?eachID={{ eachVal.id }}" target="_blank">
+                        {{ eachVal.eachProperty }}
+                    </a>
+                </h4>
+                <ul class="clearfix">
+                    <li class="w_50">{{ eachVal.area }}平米 {{ eachVal.floor }}层</li>
+                    <li class="w_50 right">{{ eachVal.room }}室{{ eachVal.hall }}厅</li>
+                </ul>
+                <ul class="clearfix">
+                    <li class="first">
+                        {{ eachVal.address }}
+                    </li>
+                    <li class="second">
+                    ¥{{ eachVal.price }}万元
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+        -->
+    </ol>
+    {% include "common/footer.html" %}
+</body>
+</html>
+

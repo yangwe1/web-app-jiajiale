@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>我要出售</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/static/css/want.css">
+    {% include "common/head.html" %}
+    <script data-main="/static/js/want" src="/static/js/require.js">
+    </script>
+</head>
+<body>
+    {% include "common/wantSaleHeader.html" %}
+    <div class="content">
+        <form action="/web/user/info" method="post" name="eachValidation">
+            <ol class="subtitle clearfix">
+                <li class="first">
+                    基本信息：
+                </li>
+                <li class="last">
+                    <span>
+                    带
+                    </span>
+                    <img src="/static/images/u_remark.png" alt="">
+                    <span>
+                    的项为必填项
+                    </span>
+                </li>
+            </ol>
+            <div class="clearfix">
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        您的姓名：
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请输入您的姓名" name="name" value="{{re_edit_doc.name}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        联系电话：
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请输入您的联系电话" name="phone" value="{{re_edit_doc.phone}}">
+                    <e></e>
+                </div>
+                <!--
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        身份证： 
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请输入您的身份证号" name="cardID" value="{{re_edit_doc.cardID}}">
+                    <e></e>
+                </div>
+                <div class="each_input last clearfix">
+                    <label for="">
+                        性别：
+                    </label>
+                    </label>
+                    <input type="text" placeholder="请输入您的性别" name="sex" value="{{re_edit_doc.sex}}">
+                </div>
+                -->
+            </div>
+            <ol class="subtitle clearfix second">
+                <li class="first">
+                    物业信息：
+                </li>
+                <li class="last">
+                    <span>
+                    带
+                    </span>
+                    <img src="/static/images/u_remark.png" alt="">
+                    <span>
+                    的项为必填项
+                    </span>
+                </li>
+            </ol>
+            <div class="clearfix">
+                <!--
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        家庭地址：
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请确认您的家庭地址" name="address" value="{{re_edit_doc.address}}">
+                    <e></e>
+                </div>
+                -->
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        小区名称：
+                        </span>
+                    </label>
+                    </label>
+                    <input type="text" placeholder="请输入您的小区名称" name="districtName" value="{{re_edit_doc.districtName}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        楼栋编号：
+                        </span>
+                    </label>
+                    </label>
+                    <input type="text" placeholder="请输入您的楼栋编号" name="floorNum" value="{{re_edit_doc.floorNum}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        单元号：
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请确认您的单元号" name="floorName" value="{{re_edit_doc.floorName}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        房屋编号：
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请确认您的房屋编号" name="houseNum" value="{{re_edit_doc.houseNum}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        房屋类型：
+                        </span>
+                    </label>
+                    </label>
+                    <input type="text" placeholder="请输入您的房屋类型" name="houseStyle" value="{{re_edit_doc.houseStyle}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        建筑面积：
+                        </span>
+                    </label>
+                    </label>
+                    <input type="text" placeholder="请输入建筑面积" name="houseSqure" value="{{re_edit_doc.houseSqure}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        <span>
+                        您的楼层：
+                        </span>
+                    </label>
+                    <input type="text" placeholder="请输入您所在楼层数" name="time" value="{{re_edit_doc.time}}">
+                    <e></e>
+                </div>
+                <div class="each_input clearfix last">
+                    <label for="">
+                        <img src="/static/images/u_remark.png" alt="">
+                        楼层总数：
+                    </label>
+                    </label>
+                    <input type="text" placeholder="请输入楼层总数" name="totalFloor" value="{{re_edit_doc.totalFloor}}">
+                </div>
+            </div>
+            <div class="each_button">
+                <input type="submit" value="提交">
+            </div>
+            <i class="warn" id="warn">
+                {{addinfo}}
+            </i>
+        </form>
+    </div>
+    {% include "common/footer.html" %}
+</body>
+</html>

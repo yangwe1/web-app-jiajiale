@@ -1,0 +1,30 @@
+/* 出售信息 */
+{
+    "houseID":1177,
+    "property":"酒厂男苑",
+    "phone":18583607687,
+    "building":"b20",
+    "unit":"2",
+    "doorNum":"502",
+    "house_age":1994,
+    "floor":3,
+    "floorCount":10,
+    "room":3,
+    "hall":2,
+    "area":90,
+    "price":59,
+    "keyNum":3281,
+    "remark":"布拉布拉",
+    "address":"布拉布拉布拉布拉",
+    "tag" :3281,
+    "date":"2014/9/20 20:45",
+    "saleStyle":"出租",
+    "imgUrl":[
+        {
+            "eachImgUrl":"test"
+        }
+    ],
+    "eachSqurePrice":9798,
+    "district":"市区",
+    "sort":"新房"
+}

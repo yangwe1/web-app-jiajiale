@@ -1,0 +1,242 @@
+@import "common/framework";
+/*
+@import "module/tab";
+*/
+@import "module/eachShopInfo";
+@import "module/crumb";
+
+/*list_search*/
+.list_search {
+	width: 100%;
+	min-width: 1026px;
+	min-height: 100px;
+	padding: 10px 0;
+}
+
+.search_conditions {
+	width: 1026px;
+	min-height: 118px;
+	margin: 0 auto;
+	padding: 10px;
+	border: 2px solid #e5e6e6;
+	background-color: #fff;
+	.switching_tags {
+		height: 24px;
+		span {
+			/*height: 24px;*/
+			height: 16px;
+			margin: 0 4px 0 0;
+			line-height: 16px;
+		}
+	}
+}
+
+.new_house,.old_house {
+	width: 100%;
+	min-height: 24px;
+	line-height: 24px;
+	display: none;
+	&.hover {
+		display: block;
+	}
+}
+
+.keywords_price,.keywords_house_type  {
+	display: block;
+	width: 1026px;
+	line-height: 24px;
+	li {
+		float: left;
+		padding: 0 8px;
+		&.title,&.type {
+			padding-left: 4px;
+			color: #0f0f0f;
+		}
+		&.active {
+			a {
+                                background-color: #3fcbc0;
+                                color: #fff;
+			}
+		}
+	}
+	a {
+		color: #555;
+                line-height:18px;
+		&:hover{
+			background-color: #3fcbc0;
+		}	
+	}
+}
+
+.search_words  {
+	display: block;
+	float: left;
+	width: 500px;
+	height: 28px;
+	margin-top: 6px;
+	line-height: 28px;
+	border:1px solid #e5e6e6;
+	padding: 4px 10px;
+	&:hover {
+		border:1px solid #76c7c0;
+	}
+}
+
+.search_button  {
+	float: left;
+	display: block;
+	width: 80px;
+	height: 28px;
+	line-height: 28px;
+	margin-top: 6px;
+	padding: 4px 0;
+	text-align: center;
+	border:1px solid #e5e6e6;
+	background-color: #3fcbc0;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	border-left: 0 none;
+	&:hover {
+		font-size: 24px;
+	}
+}
+.search_words{
+	input {
+		width: 95%;
+		font-size: 16px;
+        border: 0 none;
+        background: @colorWhite;
+	}
+} 
+
+.list_con  {
+	width: 100%;
+	min-width: 1026px;
+	min-height: 300px;
+	height: auto;
+	padding-bottom: 10px;
+}
+.list_detail  {
+	width: 1050px;
+	min-height: 300px;
+	height: auto;
+	margin: 0 auto;
+    /*
+	li {
+		display: block;
+		width: 1170px;
+		height: 270px;
+		margin-bottom: 20px;
+	}
+    */
+}
+.detail_img  {
+	display: block;
+	position: relative;
+	float: left;
+	width: 570px;
+	height: 270px;
+	margin-right: 30px;
+	border-bottom: 4px solid #e5e6e6;
+	background-color: #f8f8f8;
+	img {
+		display: block;
+		position: relative;
+		width: 570px;
+		height: 270px;
+	}
+}
+.detail_con  {
+	display: block;
+	position: relative;
+	float: left;
+	height: 270px;
+	width: 570px;
+}
+.detail_title  {
+	color: #7f8c8c;
+	font-size: 24px;
+	font-weight: bold;
+}
+.tags_list.clearfix  {
+	width: 570px;
+	height: 154px;
+	margin-top: 30px;
+	padding-left: 10px;
+	list-style: circle;
+}
+.tags_list {
+	li {
+		display: block;
+		width: 570px;
+		margin-bottom: 4px;
+		height: auto;
+		color: #777777;
+		line-height: 20px;
+		/*margin-bottom: 0;*/
+	}
+}
+.detail_price  {
+	color: #7f8c8c;
+	font-size: 24px;
+}
+.button {
+    color: @colorWhite;
+    .button(200px,50px,8px,#62bdbd,#76caca);
+    border-bottom:4px solid @colorBorder;
+    &:hover{
+        font-size: 18px;
+        background:@colorHover;
+        border:1px solid @colorBorderHover;
+        border-bottom:4px solid @colorBorderHover;
+        box-shadow: 0 0 2px 2px #e2534b;
+    }
+}
+.detail_button  {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 16px;
+}
+.list_pages_tags  {
+	display: block;
+	width: 424px;
+	height: 40px;
+	margin: 0 auto;
+    padding:20px 0;
+	li {
+		float: left;
+		display: block;
+		width: 40px;
+		height: 36px;
+		margin-right: 10px;
+		line-height: 36px;
+        border:1px solid #e5e6e6;
+		background-color: #fff;
+		text-align: center;
+		&.left {
+			margin-right: 25px;
+		}
+		&.right {
+			margin-left: 15px;
+			margin-right: 0;
+		}
+		&:hover {
+			background-color: #3fcbc0;
+			font-size: 16px;
+            a {
+                color: #fff;
+            }
+		}
+		&.active {
+			background-color: #3fcbc0;
+		}
+	}
+	a {
+		display: block;
+		width: 40px;
+		height: 40px;
+		color: #777;
+	}
+}

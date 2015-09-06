@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>联系我们</title>
+	<link rel="stylesheet" href={% static "css/font.css"   %}>
+	<link rel="stylesheet" href={% static "css/contact.css"  %}>
+    {% include "common/head.html" %}
+</head>
+<body>
+        {% include "common/contactHeader.html" %}
+	<section class=" clearfix contact_us ">
+		<div class=" map " id="map">	
+		</div>
+        <div class="contact_us_con clearfix">
+    		<div class=" send_inquiry">
+                <h3 class="send_title">反馈意见</h3>
+                <form action="" type="" class="">
+    				<ul class=" send_con ">	
+    					<li class=" first ">
+    						<span class=" input_con ">
+    							<input type="text" placeholder=" 请输入您的名字 "/>
+    						</span>
+                            <label> 名字 </label>
+    					</li>
+    					<li class=" ">
+    						<span class=" input_con ">
+    							<input type="text" placeholder=" 请输入您的邮箱 "/>
+    						</span>
+                            <label> 邮箱 </label>
+    					</li>
+    					<li class=" last ">
+    						<span class=" input_con ">
+    							<input type="text" placeholder=" 请输入 "/>
+    						</span>
+                            <label> 啥 </label>
+    					</li>
+    					<li class=" textarea ">
+    						<textarea class=" textarea_con "  placeholder=" 请输入您的宝贵意见和建议"></textarea>
+    					</li>
+    					<li class=" submit_button button">
+    						<input type=" submit " value=" 发送 " /> 
+    					</li>
+    				</ul>
+    			</form>
+    		</div>
+    		<ul class="address clearfix">
+                <li class="send_title first">地址</li>
+    			<li class="second clearfix"><i class="fa fa-map-marker"></i><span> 成都市高新西区龙湖时代天街1904  </span></li>
+    			<li><i class="fa fa-phone"></i> <span class=""> 111 5689 5698 </span>  </li>
+    			<li><i class="fa fa-envelope-o"></i> <span class="color"> modus@versus.com </span> </li>
+    		</ul>
+        </div>
+	</section>
+    {% include "common/footer.html" %}
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3RZdwgZ2zo6T8wyFEKISwo0z"></script>
+    <script type="text/javascript">
+        //新建地图
+        // 104.077255,30.518244
+        var d_lng = 104.077255,
+            d_lat = 30.518244,
+            map = new BMap.Map('map'),
+            point = new BMap.Point(d_lng,d_lat);
+        map.centerAndZoom(point,17);
+
+        //添加控件和比例尺
+        var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺//{{{
+        var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+        var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+        /*缩放控件type有四种类型:
+        BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+
+        map.addControl(top_left_control);        
+        map.addControl(top_left_navigation);     
+        map.addControl(top_right_navigation);//}}} 
+
+        //允许缩放地图
+        map.enableScrollWheelZoom(true);
+        
+        //设置点是否可以拖拽
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+        // marker.enableDragging();
+        </script>
+
+    </body>
+    </html>

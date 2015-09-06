@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+    <link rel="stylesheet" href={% static "css/global.css" %}>
+    <link rel="stylesheet" href={% static "css/font.css"   %}>
+    <link rel="stylesheet" href={% static "css/detail.css"  %}>
+    {% include "common/head.html" %}
+</head>
+<body>
+    {% include "common/saleHeader.html" %}
+    {% include "common/crumb.html" %} 
+    <section class="detail">
+        {% for eachDetail in eachInfo %}
+        <div class="detail_info clearfix">
+            <h3 class="detail_info_title">
+                七中旁 香草国际套3单卫
+            </h3>
+            <div class="detail_info_thumbnails">
+                <img src="http://www.uoko.com/Image?imgid=48397&width=450&height=300" alt="">
+            </div>
+            <ul class="detail_each_info clearfix">
+                <li class="first">
+                    <span class="detail_each_tags_name">售价:</span>
+                    <span class="detail_each_tags_info">
+                        {{ eachDetail.price }}万
+                    </span>
+                </li>
+                <li>
+                    <span class="detail_each_tags_name">单价:</span>
+                    <span class="detail_each_tags_info">{{ eachDetail.eachSqurePrice }}元/平米</span>
+                </li>
+                <li>
+                    <span class="detail_each_tags_name">面积:</span>
+                    <span class="detail_each_tags_info">{{ eachDetail.area }}平米</span>
+                </li>
+                <!-- <li>
+                    <span class="detail_each_tags_name">Location</span>
+                    <span class="detail_each_tags_info">Some Where</span>
+                </li> -->
+                <li class= " clearfix ">
+                    <span class="detail_each_tags_name">详情:</span>
+                    <span class="detail_each_tags_info detail_each_tags_list ">
+                        <span>西北</span>  
+                        <span>位于{{ eachDetail.floor }}层中部</span>  
+                        <span>{{ eachDetail.room }}室{{ eachDetail.hall }}厅1卫</span>
+                        <span>商品房</span>
+                        <span>普通住宅</span>  
+                        <span>未装修</span>
+                        <span>全新</span>  
+                    </span>
+                </li>
+                <li>
+                    <span class="detail_each_tags_name">看房时间:</span>
+                    <span class="detail_each_tags_info">电话预约</span>
+                </li>
+                <li>
+                    <span class="detail_each_tags_name">联系人:</span>
+                    <span class="detail_each_tags_info">黄先生</span>
+                </li>
+                <li class="last clearfix">
+                    <i class="fa fa-phone"></i><a href="#" class="contact_button">18583607687</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="detail_image">
+            <div class="switching_tabs clearfix">
+                <span class="left">房子详情</span>
+                <!-- <span class="right">Other House</span> -->
+            </div>
+            <div class="detail_community_introduction">
+                <h3>房子介绍</h3>
+				<p>{{ eachDetail.remark }}</p>
+			</div>
+            <ul class="detail_community_images">
+                <li class="first">
+                    <img src="http://www.uoko.com/Image?imgid=48402&width=600&height=400&w=1" alt="">
+                </li>
+                <li>
+                    <img src="http://www.uoko.com/Image?imgid=48397&width=600&height=400&w=1" alt="">
+                </li>
+                <li class="last">
+                    <img src="http://www.uoko.com/Image?imgid=48406&width=600&height=400&w=1" alt="">
+                </li>
+            </ul>
+            <div class="switching_tabs clearfix">
+                <span class="right">其他房源</span>
+            </div>
+
+            <ul class="detail_community_recommended clearfix">
+                <li class="first">
+                    <img src="http://www.uoko.com/Image?imgid=4539&width=600&height=400&w=1" alt="">
+					<a href="">概括介绍</a>
+					<p><span class=" color "> 1000 </span> /m^2 </p>
+                </li>
+                <li>
+                    <img src="http://www.uoko.com/Image?imgid=4540&width=600&height=400&w=1" alt="">
+					<a href="">概括介绍</a>
+					<p><span class=" color "> 1000 </span> /m^2 </p>
+
+                </li>
+                <li>
+                    <img src="http://www.uoko.com/Image?imgid=4541&width=600&height=400&w=1" alt="">
+                    <a href="">概括介绍</a>
+					<p><span class=" color "> 1000 </span> /m^2 </p>
+                </li>
+                <li class="last">
+                    <img src="http://www.uoko.com/Image?imgid=4542&width=600&height=400&w=1" alt="">
+                    <a href="">概括介绍</a>
+					<p><span class=" color "> 1000 </span> /m^2 </p>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </section>
+    {% include "common/footer.html" %}
+</body>
+</html>
+

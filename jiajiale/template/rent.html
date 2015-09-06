@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+	<meta charset="UTF-8">
+	<title>列表页</title>
+	<link rel="stylesheet" href={% static "css/global.css" %}>
+	<link rel="stylesheet" href={% static "css/font.css"   %}>
+	<link rel="stylesheet" href={% static "css/list.css"  %}>
+    {% include "common/head.html" %}
+</head>
+<body>
+    {% include "common/rentHeader.html" %}
+    {% include "common/crumb.html" %}
+	<section class="list_search">
+		<div class="search_conditions clearfix">
+			<div class="new_house left_new_house  hover">
+				<ul class="keywords_price clearfix">
+					<li class="title">区域:</li>
+                    {% for eachVal in districts %}
+                        {% ifequal eachVal curDistrict %}
+                            <li class="active">
+                        {% else %}
+                            <li>
+                        {% endifequal %}
+                        <a href="/rent/?district={{ eachVal }}&sort={{ curSort }}&apartment={{ curApartment }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}" target="">
+                            {% ifequal eachVal "" %}
+                                不限
+                            {% endifequal %}
+                            {{ eachVal }}
+                        </a>
+                    </li>
+                    {% endfor %}
+				</ul>
+				<ul class="keywords_house_type clearfix">
+					<li class="title">户型:</li>
+                    {% for eachVal in apartments %}
+                        {% ifequal eachVal.num curApartment %}
+                            <li class="active">
+                        {% else %}
+                            <li>
+                        {% endifequal %}
+                        <a href="/rent/?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ eachVal.num }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}" target="">
+                            {% ifequal eachVal.name "" %}
+                            不限
+                            {% endifequal %}
+                            {{ eachVal.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+				</ul>
+				<ul class="keywords_price clearfix">
+					<li class="title">价格:</li>
+                    {% for eachVal in prices %}
+                        {% ifequal eachVal.ltPrice curLtPrice %}
+                            <li class="active">
+                        {% else %}
+                            <li>
+                        {% endifequal %}
+                        <a href="/rent/?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&ltPrice={{ eachVal.ltPrice }}&gtPrice={{ eachVal.gtPrice }}" target="">
+                            {% ifequal eachVal.name "" %}
+                            不限
+                            {% endifequal %}
+                            {{ eachVal.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul class="keywords_price clearfix">
+                    <li class="title">厅室:</li>
+                    {% for eachVal in sorts %}
+                        {% ifequal eachVal curSort %}
+                            <li class="active">
+                        {% else %}
+                            <li>
+                        {% endifequal %}
+                        <a href="/rent/?district={{ curDistrict }}&sort={{ eachVal }}&apartment={{ curApartment }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}" target="">
+                            {% ifequal eachVal "" %}
+                            不限
+                            {% endifequal %}
+                            {{ eachVal }}
+                        </a>
+                    </li>
+                    {% endfor %}
+				</ul>
+			</div>
+
+			<div class="search_words">
+				<input id="searchWords" type="text" placeholder="请输入您想查找的关键字">
+			</div>
+			<span class="search_button"><i class="fa fa-search"></i></span>
+		</div>
+	</section>
+	<section class="list_con">
+		<ul class="list_detail clearfix">
+        <!--
+			<li class="first clearfix">
+				<div class="detail_img">
+					<img src="" alt="">
+				</div>
+				<div class="detail_con">
+					<h3 class="detail_title">七中旁 香草国际套3单卫</h3>
+					<ul class="tags_list clearfix">
+						<li>107平米 楼层中部/27层 2007年建 西北</li>
+						<li>3室2厅1卫</li>
+						<li>参考首付21万,月供3330元</li>
+						<li>6542元/平米</li>
+						<li>陈玲 于09-17 21:43发布的二手房房源</li>
+					</ul>
+					<span class="detail_price">70 万元</span>
+					<a href="/detail" class="button detail_button">查看详情</a>
+				</div>
+			</li>
+        -->
+
+        {% for eachVal in eachInfo %}
+            <!--
+			<li class="first clearfix">
+				<div class="detail_img">
+					<img src="" alt="">
+				</div>
+				<div class="detail_con">
+					<h3 class="detail_title">七中旁 香草国际套3单卫</h3>
+					<ul class="tags_list clearfix">
+						<li>{{ eachVal.area }}平米 {{ eachVal.floor }}层 {{ eachVal.house_age }}年建</li>
+						<li>{{ eachVal.room }}室{{ eachVal.hall }}厅1卫</li>
+						<li>参考首付21万,月供3330元</li>
+						<li>{{ eachVal.eachSqurePrice }}元/平米</li>
+						<li>陈玲 于09-17 21:43发布的二手房房源</li>
+					</ul>
+					<span class="detail_price">{{ eachVal.price }} 元</span>
+					<a href="/rentDetail?eachID={{ eachVal.id }}" class="button detail_button">查看详情</a>
+				</div>
+			</li>
+            -->
+            <div class="each_detail_info">
+                <a href="/rentDetail?eachID={{ eachVal.id }}" target="_blank" class="imgbox_318_212">
+                    <img src="http://www.uoko.com/Image?imgid=59207&width=318&height=212" alt="">
+                </a>
+                <h4>
+                    <a href="/rentDetail?eachID={{ eachVal.id }}" target="_blank">
+                        {{ eachVal.eachProperty }}
+                    </a>
+                </h4>
+                <ul class="clearfix">
+                    <li class="w_50">{{ eachVal.area }}平米 {{ eachVal.floor }}层</li>
+                    <li class="w_50 right">{{ eachVal.room }}室{{ eachVal.hall }}厅</li>
+                </ul>
+                <ul class="clearfix">
+                    <li class="first">
+                        {{ eachVal.address }}
+                    </li>
+                    <li class="second">
+                    ¥{{ eachVal.price }}元
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+		</ul>
+		<ul class="list_pages_tags clearfix">
+            
+            <li class="left">
+                <a href="/sale?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&page={{ prevPage }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            </li>
+            {% ifnotequal prevPage curPage %} 
+                <li>
+                    <a href="/sale?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&page={{ prevPage }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}">
+                        {{ prevPage }}
+                    </a>
+                </li>
+            {% endifnotequal %} 
+            
+            <li class="active">
+                <a href="/sale?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&page={{ curPage }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}">
+                    {{ curPage }}
+                </a>
+            </li> 
+
+            {% ifnotequal maxPage nextPage %} 
+                <li>
+                    <a href="/sale?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&page={{ nextPage }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}">
+                        {{ nextPage }}
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    ...
+                    </a>
+                </li>
+            {% endifnotequal %} 
+
+            {% ifnotequal maxPage curPage %} 
+                <li>
+                    <a href="/sale?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&page={{ maxPage }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}">
+                        {{ maxPage }}
+                    </a>
+                </li>
+            {% endifnotequal %} 
+			<li class="right">
+                <a href="/sale?district={{ curDistrict }}&sort={{ curSort }}&apartment={{ curApartment }}&page={{ nextPage }}&ltPrice={{ curLtPrice }}&gtPrice={{ curGtPrice }}">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </li>
+		</ul>
+	</section>
+        {% include "common/footer.html" %}
+	<script type="text/javascript" src={% static "js/jquery.js" %} ></script>
+	<script type="text/javascript" src={% static "js/sale.js"   %} ></script>
+</body>
+</html>
+

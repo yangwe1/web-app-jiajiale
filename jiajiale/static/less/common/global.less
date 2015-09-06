@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* 2015.1.18 by guiche */
+html {
+  height: 100%;
+  font-size: 16px;
+  /*font-size: 62.5%;*/
+}
+*{
+  margin:0;
+  padding:0;
+  -webkit-box-sizing:border-box;
+  -webkit-tap-highlight-color:rgba(255,255,255,0)
+}
+li{
+  list-style:none
+}
+img{
+  border:none;
+  width: 100%;
+}
+a{
+  text-decoration:none
+}
+input::-ms-clear {
+    display:none;
+}
+textarea {
+    resize:none;
+}
+input,button {
+    -webkit-appearance: none;
+    border-redius:0;
+}
+input:focus,textarea:focus {
+    outline:none;
+}
+body{
+  color:#333;
+  font-family:"微软雅黑","宋体","SimSun","Arial Narrow",HELVETICA;
+  line-height:1.5em
+  height:100%;
+  width:100%;
+  background:#fff;
+}
+.clearfix{ 
+    zoom:1;
+    &.clearfix:after{ 
+      clear: both;
+      content: "\20"; 
+      display: block;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+}
+.none {
+    display:none;
+}
+.block {
+    display: block;
+}
+.table {
+    display: table;
+    word-spacing: -1em;
+}
+.inline {
+    display:inline-block;
+    word-spacing: 0;
+}
+.f_left {
+    float: left;
+}
+.f_right {
+    float: right;
+}
+.common_center( @margin-top, @margin-bottom, @width){
+  width:@width;
+  margin:@margin-top auto @margin-bottom;
+}
+.imgbox( @width, @height: auto ) {
+    display:block;
+    width: @width;
+    height: @height;
+    img {
+        display:block;
+        width: @width;
+    }
+}
+.middle_height(@height){
+  height:@height;
+  line-height:@height;
+}
